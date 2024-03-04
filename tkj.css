@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@700&display=swap');
+*, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playpen Sans', cursive;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+}
+
+:root {
+    --head-bgcolor:rgb(238, 130, 238);
+    --head-fontColor:#800080;
+    --page-bgcolor:rgb(187, 0, 255);
+    --footer-bgcolor:rgb(243, 208, 114);
+    --isi-halaman-bgcolor:rgb(255, 255, 255);
+    --contrast-color:rgb(60, 0, 60);
+}
+
+.head {
+    background-color: rgb(255, 255, 255);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    transition: 0.5s ease-out;
+}
+.head.on {
+    background-color: var(--head-bgcolor);
+}
+.head.on .dua ul li a:hover {
+    background-color: rgb(255, 255, 255);
+    color: var(--head-fontColor);
+    transition: 0.1s;
+}
+
+.head .satu {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-self:center;
+    
+}
+
+.head .satu h1 {
+    font-size: 30px;
+    width: 400px;   
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color: rgb(63, 0, 63) ;
+}
+
+.head .satu img {
+    width: 60px;
+    height: 60px;
+    margin-inline: 25px;
+    cursor: pointer;
+}
+
+.head .dua {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self:center;
+}
+
+.head .dua .navbar {
+    display: none;
+    margin-right: 50px;
+    cursor: pointer;
+}
+.head .dua .navbar:active{
+    opacity: 0.5;
+    transition: 0.1s;
+}
+.head .dua .navbar img {
+    width: 25px;
+}
+
+.head .dua ul {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.head .dua ul li {
+    margin-inline: 20px;
+    list-style: none;
+    font-size: 19px;
+    text-transform: capitalize; 
+}
+
+.head .dua ul li a {
+    text-decoration: none;
+    color: var(--head-fontColor);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.head .dua ul li a:hover {
+    background-color: var(--head-fontColor);
+    color: white;
+    transition: 0.1s;
+}
+
+.navbar-container {
+    background-color: white;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 20;
+    display: none;
+    justify-content: right;
+}
+
+/*------------------------------------------------------------*/
+
+.halaman {
+    background-color: white;
+    height: auto;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.halaman .isihalaman {
+    height: auto;
+    width: 90%;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.halaman .isihalaman .textHead {
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--head-fontColor);
+    font-weight: 500;
+    font-size: xx-large;
+    padding: 25px;
+}
+.halaman .isihalaman .content {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+.halaman .isihalaman .content .gambar {
+    width: 25%;
+    height: 350px;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.halaman .isihalaman .content .textInfo {
+    background-color: var(--isi-halaman-bgcolor);
+    width: 100%;
+    padding: 25px;
+    line-height: 35px;
+    text-align: justify;
+    text-justify:inter-word;
+}
+
+.halaman .isihalaman .peserta {
+    width: 100%;
+    margin-top: 25px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.halaman .isihalaman .peserta .card {
+    background-color: var(--head-fontColor);
+    color: white;
+    width: 250px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin: 25px;
+    font-size: large;
+    border-radius: 10px;
+}
+
+.halaman .isihalaman .galeri .textHeadKedua {
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--head-fontColor);
+    font-weight: 500;
+    font-size: xx-large;
+    padding: 25px;
+}
+
+.halaman .isihalaman .galeri .contentKedua {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.halaman .isihalaman .galeri .contentKedua img {
+    width: 350px;
+    height: 350px;
+    margin: 25px;
+    background-color: rgb(255, 255, 255);
+}
+
+/*------------------------------------------------------------*/
+
+
+.footer {
+    background-color: var(--footer-bgcolor);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1320px) { 
+    .head .dua li {
+        display: none;
+    }
+    .head .dua .navbar {
+        display: block;
+    }
+    .head .dua {
+        justify-content:right;
+    }
+    .navbar-container {
+        display: none;          /*flex*/
+        animation-name: muncul;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-out;
+    }
+
+    @keyframes muncul {
+        0% {
+            top: -100%;
+        }
+        100% {
+            top:0%;
+        }
+    }
+
+    .navbar-container .container1 {
+        height: 100%;
+        display: flex;
+        align-items:center;
+    }
+    .navbar-container .container1 .navbar {
+        width: 25px;
+        height: 25px;
+        padding: 25px;
+        background-color: rgb(255, 255, 255);
+        border-bottom-left-radius: 25px;
+    }
+    .navbar-container ul {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+    
+    .navbar-container ul li {
+        margin-inline: 10px;
+        list-style: none;
+    }
+    
+    .navbar-container ul li a {
+        
+        padding: 10px;
+        color:var(--head-fontColor);
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: large;
+        transition: 0.5s;
+    }
+    .navbar-container ul li a:hover {
+        background-color: rgb(20, 20, 20);
+        color: white;
+        transform: 0.2s ease-in;
+    }
+}
+@media screen and (max-width:860px) {
+    .halaman .isihalaman .textHead,.halaman .isihalaman .galeri .textHeadKedua {
+        font-size: large;
+        width: auto;
+        
+    }
+    .halaman .isihalaman .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+    }
+    .halaman .isihalaman .content .gambar {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+    .halaman .isihalaman .content .textInfo {
+        background-color: var(--isi-halaman-bgcolor);
+        width: 100%;
+        padding: 10px;
+        line-height: 35px;
+        text-align: justify;
+        text-justify:inter-word;
+        font-size: medium;
+    }
+}
+@media screen and (max-width: 680px) { 
+
+    .head .satu h1 {
+        font-size: large;
+        width: 240px;
+        margin-left: 5px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+    
+    .head .satu img {
+        width: 50px;
+        height: 50px;
+        margin-inline: 25px;
+    }
+    .navbar-container {
+        height: 540px;
+        background-color: hsla(0, 0%, 0%, 0.75);
+        display: none;              /*flex*/
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .navbar-container .container1 {
+        height: 100%;
+        display: flex;
+        justify-content: right;
+        align-items:start;
+        position: relative;
+        z-index: -1;
+    }
+    .navbar-container .container1 .navbar {
+        width: 25px;
+        height: 25px;
+        padding: 25px;
+        background-color: rgb(255, 255, 255);
+        border-bottom-left-radius: 25px;
+    }
+    .navbar-container .container1 .navbar:active {
+        opacity: 0.25;
+        transition: 0.1s;
+    }
+
+
+    .navbar-container ul {
+        position: absolute;
+        flex-direction: column;
+
+    }
+    .navbar-container ul li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar-container ul li a{
+        color:var(--head-fontColor);
+        font-size: x-large;
+        background-color: white;
+        margin-block: 10px; 
+        width: 250px;
+        text-align: center;
+        transition: 0.1s;
+    }
+   
+}
+
+@media screen and (max-width: 575px) {
+   
+}
+@media screen and (max-width: 569px) { 
+    .halaman .isihalaman .textHead,.halaman .isihalaman .galeri .textHeadKedua {
+        font-size: medium;
+        width: auto;
+    }
+    
+}
+
+@media screen and (max-width: 460px) { 
+    .head .satu {
+        display: flex;
+        align-items: center;
+    }
+    .head .satu h1 {
+        font-size: 15px;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }    
+    .head .satu img {
+        width: 50px;
+        height: 50px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    .head .dua .navbar {
+        margin-right: 25px;
+    }
+
+}
